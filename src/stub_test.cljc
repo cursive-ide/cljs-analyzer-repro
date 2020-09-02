@@ -1,15 +1,12 @@
 (ns stub-test
   #?(:cljs (:require-macros [stub-test])))
 
-; These should not appear, since they will be found by indexing
-
 (def normal-def nil)
 (defn normal-defn [])
 #?(:clj (defmacro normal-macro []))
 (defmulti normal-multimethod :whatever)
 (defprotocol NormalProtocol (normal-method [this]))
 
-; These should all appear
 #?(:clj
    (defmacro
      gen-stuff []
